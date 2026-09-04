@@ -207,16 +207,6 @@
       "group": "jakubkrehel",
       "path": "skills/jakubkrehel/interface-review"
     },
-    "migrate-to-shoehorn": {
-      "source": "mattpocock/skills",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/mattpocock/skills.git",
-      "skillPath": "skills/misc/migrate-to-shoehorn/SKILL.md",
-      "recordedUpstreamHash": "0aea91a3599a4bf7aeec17e3262d4cbcfcbeec23",
-      "computedHash": "6397731ced114f3657aa88b55ed13d1344a56d77ca449c568e3200c21740fa99",
-      "group": "mattpocock",
-      "path": "skills/mattpocock/migrate-to-shoehorn"
-    },
     "prototype": {
       "source": "mattpocock/skills",
       "sourceType": "github",
