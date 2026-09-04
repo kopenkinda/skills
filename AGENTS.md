@@ -22,14 +22,21 @@ The importer refuses to replace an existing skill. Preserve local changes. For a
 
 ## Invocation policy
 
-All mirrored skills remain explicitly invocable by name. When a skill should run only after a user invokes it, set this in the skill's `agents/openai.yaml`:
+All mirrored skills remain explicitly invocable by name. When a skill should run only after a user invokes it, set these fields in its `SKILL.md` frontmatter:
+
+```yaml
+user-invocable: true
+disable-model-invocation: true
+```
+
+Also set this in the skill's `agents/openai.yaml` for Codex:
 
 ```yaml
 policy:
   allow_implicit_invocation: false
 ```
 
-Preserve existing `interface`, `dependencies`, and other policy fields. Use the importer's `--explicit-only` option when this is known at import time. Omit that policy when Codex should also select the skill automatically.
+Preserve existing `interface`, `dependencies`, and other policy fields. Use the importer's `--explicit-only` option when this is known at import time. Omit these fields and policy when the skill may also be selected automatically.
 
 ## Text format
 

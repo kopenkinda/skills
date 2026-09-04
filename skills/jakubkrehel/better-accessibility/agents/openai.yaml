@@ -1,0 +1,6 @@
+interface:
+  display_name: "Better Accessibility"
+  short_description: "Focus, keyboard, ARIA, forms and screen readers"
+
+policy:
+  allow_implicit_invocation: false

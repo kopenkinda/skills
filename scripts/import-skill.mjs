@@ -135,11 +135,13 @@ try {
   const manifestPath = join(repoRoot, "upstreams.json");
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   const origin = recordedOrigin ?? upstreamEntry;
+  const sourceUrl =
+    origin.sourceUrl ?? derivePublicSourceUrl(origin.sourceType, origin.source);
   const publicSource =
     group !== personalGroup && origin.sourceType !== "local"
       ? {
           ...(origin.source ? { source: origin.source } : {}),
-          ...(origin.sourceUrl ? { sourceUrl: origin.sourceUrl } : {}),
+          ...(sourceUrl ? { sourceUrl } : {}),
           ...(origin.skillPath ? { skillPath: origin.skillPath } : {}),
           ...(origin.ref ? { ref: origin.ref } : {}),
           ...(origin.skillFolderHash
@@ -171,6 +173,8 @@ try {
 }
 
 function setExplicitOnly(skillDirectory) {
+  setExplicitFrontmatter(join(skillDirectory, "SKILL.md"));
+
   const agentsDirectory = join(skillDirectory, "agents");
   const yamlPath = join(agentsDirectory, "openai.yaml");
 
@@ -209,6 +213,32 @@ function setExplicitOnly(skillDirectory) {
   writeFileSync(yamlPath, yaml.endsWith("\n") ? yaml : `${yaml}\n`);
 }
 
+function setExplicitFrontmatter(skillFile) {
+  const markdown = readFileSync(skillFile, "utf8");
+  const frontmatterMatch = markdown.match(
+    /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/,
+  );
+
+  if (!frontmatterMatch) {
+    throw new Error(`${skillFile} does not have valid YAML frontmatter.`);
+  }
+
+  let frontmatter = frontmatterMatch[1];
+  const flags = ["user-invocable", "disable-model-invocation"];
+
+  for (const flag of flags) {
+    const field = new RegExp(`^${flag}:\\s*.*$`, "m");
+    if (field.test(frontmatter)) {
+      frontmatter = frontmatter.replace(field, `${flag}: true`);
+    } else {
+      frontmatter = `${frontmatter.trimEnd()}\n${flag}: true`;
+    }
+  }
+
+  const body = markdown.slice(frontmatterMatch[0].length);
+  writeFileSync(skillFile, `---\n${frontmatter}\n---\n${body}`);
+}
+
 function deriveGroup(value) {
   const scpMatch = value.match(/^[^@]+@[^:]+:([^/]+)\//);
   if (scpMatch) return scpMatch[1];
@@ -225,6 +255,18 @@ function deriveGroup(value) {
   }
 
   return "local";
+}
+
+function derivePublicSourceUrl(sourceType, sourceName) {
+  if (
+    sourceType === "github" &&
+    typeof sourceName === "string" &&
+    /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(sourceName)
+  ) {
+    return `https://github.com/${sourceName}.git`;
+  }
+
+  return undefined;
 }
 
 function normalizeGroup(value) {

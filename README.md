@@ -42,6 +42,10 @@ To keep a skill available as `$skill-name` while preventing automatic invocation
 npm run import -- owner/repo skill-name --explicit-only
 ```
 
+This sets `user-invocable: true` and `disable-model-invocation: true` in the
+skill frontmatter for agents that follow those fields. It also sets Codex's
+`policy.allow_implicit_invocation` to `false` in `agents/openai.yaml`.
+
 The importer copies the complete skill, including supporting references and assets. It will not overwrite an existing fork.
 
 After making changes, validate the mirror:

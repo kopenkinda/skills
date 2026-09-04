@@ -1,0 +1,6 @@
+interface:
+  display_name: "Better Typography"
+  short_description: "Fonts, type scales, spacing and wrapping"
+
+policy:
+  allow_implicit_invocation: false

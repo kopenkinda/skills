@@ -7,6 +7,86 @@
       "group": "kopenkinda",
       "path": "skills/kopenkinda/babysit"
     },
+    "better-accessibility": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-accessibility/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "019387b6da56d6f46a7c0f31ca274075a7c2592aed8289b53e89533d068c2d09",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-accessibility"
+    },
+    "better-colors": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-colors/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "1a6ff21c2ee760744f119cf6166df95ab4d05335c771c04a2ecb4c49cbbe5f1c",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-colors"
+    },
+    "better-interface": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-interface/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "406267c5782510d658a914899db2fc5eb3f5f7d51620cc4c86d7e26b217fdf24",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-interface"
+    },
+    "better-layout": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-layout/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "cb369bccb6a337c6fd2344dacccae0d1e12a1fb85b6eb9e726b76b18a95f16d6",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-layout"
+    },
+    "better-typography": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-typography/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "342f0e90fe46fd8a0111682ebd7e1ce526ede636d1a14d867d8dd3e2803670af",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-typography"
+    },
+    "better-ui": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-ui/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "d05cf568f197e47b15e71e21b19be1897eba2bf187ef7b0a341bc5ffaf3ffd4d",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-ui"
+    },
+    "better-writing": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/better-writing/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "225768480d8ba9cf6d00bb728d2a34dfb430d2134e25fc02dcedbba086b3bc5f",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/better-writing"
+    },
+    "break": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/break/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "528ebeb92997f30092b8c59a57944970febe4c84d3675d05e87432441c6f6832",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/break"
+    },
     "code-review": {
       "source": "mattpocock/skills",
       "sourceType": "github",
@@ -46,6 +126,16 @@
       "computedHash": "67343881f5def98487d56243155716110afbcbf22ec92421c882d532b941cb17",
       "group": "mattpocock",
       "path": "skills/mattpocock/domain-modeling"
+    },
+    "explain-interface": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/explain-interface/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "c070d4c7d530011d572b18bf86ddff9cd7493942379deca7eb63aae1d99df17c",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/explain-interface"
     },
     "frontend-design": {
       "source": "anthropics/skills",
@@ -106,6 +196,16 @@
       "computedHash": "66e8a50c83c3c724fcfe0769701b665c56cec220cc4f49cc1aee8bdfc07de94a",
       "group": "mattpocock",
       "path": "skills/mattpocock/improve-codebase-architecture"
+    },
+    "interface-review": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/interface-review/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "692fc5f2cfc2ad08951ea68ee6f5db9c99b759fa46b18e53101cd50d51a94f3a",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/interface-review"
     },
     "migrate-to-shoehorn": {
       "source": "mattpocock/skills",
@@ -216,6 +316,16 @@
       "computedHash": "3dfc2afeda677e12c6065497a40df7d895859de1c7d1cffb899b1559d129fe4f",
       "group": "pstack",
       "path": "skills/pstack/unslop"
+    },
+    "variant": {
+      "source": "jakubkrehel/skills",
+      "sourceUrl": "https://github.com/jakubkrehel/skills.git",
+      "skillPath": "skills/variant/SKILL.md",
+      "ref": "main",
+      "sourceType": "github",
+      "computedHash": "d66d7c9a0b7c7ee12b7a7cacefebe4234a45284372b2fb6e7ddc1342ffca0f69",
+      "group": "jakubkrehel",
+      "path": "skills/jakubkrehel/variant"
     },
     "vercel-composition-patterns": {
       "source": "vercel-labs/agent-skills",

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Better Interface"
+  short_description: "Cross-discipline interface review"
+
+policy:
+  allow_implicit_invocation: false
