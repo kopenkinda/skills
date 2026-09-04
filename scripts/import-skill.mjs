@@ -15,10 +15,12 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const personalGroup = "kopenkinda";
 const rawArgs = process.argv.slice(2);
 const positional = [];
 let explicitOnly = false;
 let requestedGroup;
+let originLockPath;
 
 for (let index = 0; index < rawArgs.length; index += 1) {
   const arg = rawArgs[index];
@@ -29,6 +31,13 @@ for (let index = 0; index < rawArgs.length; index += 1) {
     index += 1;
     if (!requestedGroup) {
       console.error("--group requires an author name");
+      process.exit(1);
+    }
+  } else if (arg === "--origin-lock") {
+    originLockPath = rawArgs[index + 1];
+    index += 1;
+    if (!originLockPath) {
+      console.error("--origin-lock requires a Skills CLI lock file path");
       process.exit(1);
     }
   } else {
@@ -42,7 +51,7 @@ if (
   positional.includes("-h")
 ) {
   console.error(
-    "Usage: npm run import -- <source> <skill-name> [--group <author>] [--explicit-only]",
+    "Usage: npm run import -- <source> <skill-name> [--group <author>] [--origin-lock <path>] [--explicit-only]",
   );
   process.exit(
     positional.includes("--help") || positional.includes("-h") ? 0 : 1,
@@ -117,15 +126,31 @@ try {
     throw new Error("Skills CLI did not record upstream provenance.");
   }
 
+  const recordedOrigin = originLockPath
+    ? readRecordedOrigin(originLockPath, skillName)
+    : undefined;
+
   const manifestPath = join(repoRoot, "upstreams.json");
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+  const origin = recordedOrigin ?? upstreamEntry;
+  const publicSource =
+    group !== personalGroup && origin.sourceType !== "local"
+      ? {
+          ...(origin.source ? { source: origin.source } : {}),
+          ...(origin.sourceUrl ? { sourceUrl: origin.sourceUrl } : {}),
+          ...(origin.skillPath ? { skillPath: origin.skillPath } : {}),
+          ...(origin.ref ? { ref: origin.ref } : {}),
+          ...(origin.skillFolderHash
+            ? { recordedUpstreamHash: origin.skillFolderHash }
+            : {}),
+        }
+      : {};
   manifest.skills[skillName] = {
-    requestedSource: source,
+    ...publicSource,
+    sourceType: origin.sourceType,
+    computedHash: upstreamEntry.computedHash,
     group,
     path: `skills/${group}/${skillName}`,
-    importedAt: new Date().toISOString(),
-    explicitOnly,
-    ...upstreamEntry,
   };
   manifest.skills = Object.fromEntries(
     Object.entries(manifest.skills).sort(([left], [right]) =>
@@ -212,4 +237,16 @@ function normalizeGroup(value) {
   }
 
   return normalized;
+}
+
+function readRecordedOrigin(lockPath, skillName) {
+  const absolutePath = resolve(lockPath);
+  const lock = JSON.parse(readFileSync(absolutePath, "utf8"));
+  const entry = lock.skills?.[skillName];
+
+  if (!entry) {
+    throw new Error(`${absolutePath} has no provenance entry for ${skillName}.`);
+  }
+
+  return entry;
 }

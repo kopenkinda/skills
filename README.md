@@ -2,7 +2,7 @@
 
 This repository holds editable copies of skills found through the [Skills CLI](https://github.com/vercel-labs/skills). Skills live under `skills/<author>/<skill-name>/`, so related work stays grouped while each skill remains directly installable. You can change its instructions, references, scripts, assets, or Codex invocation policy and commit the result.
 
-`upstreams.json` records where each copy came from and the hash produced by the CLI at import time. It describes the upstream snapshot. Your later edits are the point of this repository, so they do not rewrite that hash.
+`upstreams.json` keeps public GitHub provenance for third-party skills. Personal skills in the `kopenkinda` group contain only the source type, content hash, author group, and repository-relative path. Local paths, timestamps, and machine-specific details are omitted.
 
 ## Import a skill
 
@@ -26,6 +26,15 @@ The importer derives `vercel-labs` as the group in that example. Override the gr
 ```sh
 npm run import -- ./downloaded-skills skill-name --group alice
 ```
+
+For a locally installed copy with an existing Skills CLI lock entry:
+
+```sh
+npm run import -- ~/.agents/skills skill-name --group alice \
+  --origin-lock ~/.agents/.skill-lock.json
+```
+
+This preserves public registry and GitHub provenance without recording either local path. Imports into the `kopenkinda` group keep only the four minimal fields.
 
 To keep a skill available as `$skill-name` while preventing automatic invocation:
 

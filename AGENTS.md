@@ -12,9 +12,11 @@ npm run import -- <source> <skill-name> [--group <author>] [--explicit-only]
 
 The source may be a Skills CLI registry result, an `owner/repo` GitHub shorthand, a Git URL, a direct skill URL, or a local path. The import script uses the Skills CLI in a temporary directory, copies the whole selected skill into `skills/<author>/<skill-name>`, and records its upstream entry in `upstreams.json`. It derives the author from common Git sources. Pass `--group` when that result is ambiguous or when a different grouping is wanted.
 
+When copying an already installed local skill, pass `--origin-lock <path>` if its Skills CLI lock file exists. The importer uses it to preserve the public source type without recording the lock path or registry location.
+
 When the user supplies only a skill name or search terms, run `npm run find -- <query>` to search the registry. Resolve the exact source and skill name from the result before running the importer. If several results are plausible and the choice would change which skill is copied, ask the user which one they mean.
 
-Keep every imported file, including `references/`, `scripts/`, `assets/`, and `agents/`. Make requested customizations only after the import completes. Treat `upstreams.json` as provenance for the untouched upstream snapshot, so local edits do not change its recorded upstream hash.
+Keep every imported file, including `references/`, `scripts/`, `assets/`, and `agents/`. Make requested customizations only after the import completes. Keep `upstreams.json` public-safe. Skills in the `kopenkinda` group contain only `sourceType`, `computedHash`, `group`, and `path`. Third-party skills also retain public registry sources, GitHub URLs, upstream paths, refs, and upstream hashes. Local paths, timestamps, and machine-specific installation details never belong there.
 
 The importer refuses to replace an existing skill. Preserve local changes. For an upstream refresh, fetch a fresh copy outside its current directory, compare it with the fork, and merge the wanted changes deliberately.
 

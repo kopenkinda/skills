@@ -1,0 +1,6 @@
+interface:
+  display_name: "Babysit"
+  short_description: "Watch a task until its finish condition holds"
+  default_prompt: "Use $babysit to watch this work until it is complete: "
+policy:
+  allow_implicit_invocation: false
