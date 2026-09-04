@@ -31,6 +31,10 @@ policy:
 
 Preserve existing `interface`, `dependencies`, and other policy fields. Use the importer's `--explicit-only` option when this is known at import time. Omit that policy when Codex should also select the skill automatically.
 
+## Text format
+
+Use the ASCII hyphen-minus (`-`, U+002D) everywhere under `skills/`. Replace every em dash (U+2014) in skill instructions, frontmatter, references, examples, and other text files. The importer normalizes this punctuation, and validation rejects any em dash left in a skill.
+
 ## Validation
 
 Run `npm run check` after importing or changing a skill. A finished change has valid `SKILL.md` frontmatter, one unique skill name, intact referenced files, and a matching provenance entry for every imported skill. Original skills may omit provenance and should live under `skills/local/` or the author's own handle.

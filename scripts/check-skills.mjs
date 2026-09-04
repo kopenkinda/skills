@@ -27,6 +27,16 @@ const publicSourceFields = new Set([
   "recordedUpstreamHash",
 ]);
 
+for (const path of findFiles(skillsRoot)) {
+  const buffer = readFileSync(path);
+  const text = buffer.toString("utf8");
+  if (Buffer.from(text).equals(buffer) && text.includes("\u2014")) {
+    errors.push(
+      `${path.slice(repoRoot.length + 1)} contains an em dash; use the ASCII hyphen-minus`,
+    );
+  }
+}
+
 for (const skillPath of findSkillFiles(skillsRoot)) {
   const relativePath = skillPath
     .slice(skillsRoot.length + 1)
@@ -130,6 +140,18 @@ function findSkillFiles(directory) {
     const path = join(directory, entry.name);
     if (entry.isDirectory()) results.push(...findSkillFiles(path));
     if (entry.isFile() && entry.name === "SKILL.md") results.push(path);
+  }
+
+  return results;
+}
+
+function findFiles(directory) {
+  const results = [];
+
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) results.push(...findFiles(path));
+    if (entry.isFile()) results.push(path);
   }
 
   return results;

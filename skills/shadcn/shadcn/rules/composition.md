@@ -133,7 +133,7 @@ toast("File deleted.", {
 
 ## Card structure
 
-Use full composition — don't dump everything into `CardContent`:
+Use full composition - don't dump everything into `CardContent`:
 
 ```tsx
 <Card>
@@ -165,7 +165,7 @@ Compose with `Spinner` + `data-icon` + `disabled`:
 
 ## TabsTrigger must be inside TabsList
 
-Never render `TabsTrigger` directly inside `Tabs` — always wrap in `TabsList`:
+Never render `TabsTrigger` directly inside `Tabs` - always wrap in `TabsList`:
 
 ```tsx
 <Tabs defaultValue="account">

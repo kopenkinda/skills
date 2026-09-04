@@ -6,6 +6,7 @@ import {
   existsSync,
   mkdirSync,
   mkdtempSync,
+  readdirSync,
   readFileSync,
   rmSync,
   writeFileSync,
@@ -117,6 +118,7 @@ try {
   cpSync(importedPath, destination, { recursive: true, errorOnExist: true });
 
   if (explicitOnly) setExplicitOnly(destination);
+  normalizeEmDashes(destination);
 
   const cliLockPath = join(workDir, "skills-lock.json");
   const cliLock = JSON.parse(readFileSync(cliLockPath, "utf8"));
@@ -249,4 +251,21 @@ function readRecordedOrigin(lockPath, skillName) {
   }
 
   return entry;
+}
+
+function normalizeEmDashes(directory) {
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      normalizeEmDashes(path);
+      continue;
+    }
+    if (!entry.isFile()) continue;
+
+    const buffer = readFileSync(path);
+    const text = buffer.toString("utf8");
+    if (Buffer.from(text).equals(buffer) && text.includes("\u2014")) {
+      writeFileSync(path, text.replaceAll("\u2014", "-"));
+    }
+  }
 }
