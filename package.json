@@ -1,0 +1,17 @@
+{
+  "name": "personal-skills-mirror",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-skills.mjs",
+    "find": "skills find",
+    "import": "node scripts/import-skill.mjs",
+    "list": "skills add . --list"
+  },
+  "devDependencies": {
+    "skills": "1.5.23"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
