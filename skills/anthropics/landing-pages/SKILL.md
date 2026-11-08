@@ -1,6 +1,6 @@
 ---
 name: landing-pages
-description: Distinctive visual design for public, first-impression pages - landing pages, marketing sites, product launches, portfolios, campaign and event pages. Use when building or redesigning one of these. Not for app screens, dashboards, settings, admin or other dense product UI; those follow the project's existing design system.
+description: Distinctive visual design for public, first-impression pages - landing pages, marketing sites, product launches, portfolios, campaign and event pages. Use when building or redesigning one of these. Not for app screens, dashboards, settings, admin or other dense product UI; use app-interface for those.
 license: Complete terms in LICENSE.txt
 ---
 
@@ -22,7 +22,9 @@ Composition can carry the direction too. Asymmetry, overlap, elements that break
 
 Give the surface atmosphere when the direction calls for it. A flat solid background is a default, not a decision: texture, grain, a pattern drawn from the subject's world, layered transparency or a deliberate shadow can set the mood before any copy is read.
 
-Structure is information. Structural devices, numbering, eyebrows, dividers, labels, should encode something true about the content, not decorate it. Many generic designs use numbered markers (01 / 02 / 03), but that's only appropriate if the content actually is a sequence - like a real process or a typed timeline where order carries information the reader needs. Question if choices like numbered markers actually make sense before incorporating them.
+Structure is information. Structural devices, numbering, dividers, labels, should encode something true about the content, not decorate it. Many generic designs use numbered markers (01 / 02 / 03), but that's only appropriate if the content actually is a sequence - like a real process or a typed timeline where order carries information the reader needs. Question if choices like numbered markers actually make sense before incorporating them.
+
+No eyebrows: no small line of text above a headline, all-caps tracked or not, with or without an icon. It is the most recognizable tell of a generated page. If the line says something worth reading, make it the headline or put it in the body; otherwise cut it. The same goes for a small label above a price, stat or section that the content already makes obvious.
 
 Leverage motion deliberately. Think about where and if animation can serve the subject: a page-load sequence, a scroll-triggered reveal, hover micro-interactions, ambient atmosphere. An orchestrated moment usually lands harder than scattered effects; choose what the direction calls for. However, sometimes less is more, and extra animation contributes to the feeling that the design is AI-generated.
 
