@@ -30,6 +30,15 @@
       "group": "antfu",
       "path": "skills/antfu/pnpm"
     },
+    "ponytail": {
+      "source": "DietrichGebert/ponytail",
+      "sourceUrl": "https://github.com/DietrichGebert/ponytail.git",
+      "skillPath": "skills/ponytail/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "061f887d9e3e735f85db3be3655a8936a00f24d5fb65ac4ab74a968a770fe342",
+      "group": "dietrichgebert",
+      "path": "skills/dietrichgebert/ponytail"
+    },
     "prototype": {
       "source": "mattpocock/skills",
       "sourceType": "github",
