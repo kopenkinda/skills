@@ -1,6 +1,51 @@
 {
   "schemaVersion": 1,
   "skills": {
+    "babysit-pr": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/babysit-pr/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "ba004a14dde8e9997f2f69c1ca52152349473bd82cfa0801eb5af81879200cf8",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/babysit-pr"
+    },
+    "council": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/council/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "0becf128f106f35c06e713c571789e547102026d1acd6f50622e6dc69e97f78f",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/council"
+    },
+    "file-pr": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/file-pr/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "7a073ff704743ba9ca6be75a173bb1de892e58c6e46105515bbdcc386ba6a266",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/file-pr"
+    },
+    "full-send": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/full-send/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "f5e7297f9eeb6a4f83312d22a81186db11233d647c854d75addf756e099dfb47",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/full-send"
+    },
+    "full-stop": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/full-stop/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "81dc01710afe6a54337a18f0a90d17ccf2776220acd1e84512fdbd9b89e19054",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/full-stop"
+    },
     "grilling": {
       "source": "mattpocock/skills",
       "sourceUrl": "https://github.com/mattpocock/skills.git",
@@ -19,6 +64,15 @@
       "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336",
       "group": "anthropics",
       "path": "skills/anthropics/landing-pages"
+    },
+    "leaving-pr-comments": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/leaving-pr-comments/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "d64a0d8e7bb6e5b9129a9f0017f98f1e5851c2f317d2300c4eef3aaeec649149",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/leaving-pr-comments"
     },
     "pnpm": {
       "source": "antfu/skills",
@@ -58,6 +112,24 @@
       "computedHash": "d81caa0f86aabab65b25e302d454f23a3328760386ed9078345584c0d5c8058e",
       "group": "shadcn",
       "path": "skills/shadcn/shadcn"
+    },
+    "sol-loop": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/sol-loop/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "0b039bc755d387a522ce2c050b6f000c3dee08ec7477171037131ad57c2935ec",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/sol-loop"
+    },
+    "takeover": {
+      "source": "t3dotgg/tstack",
+      "sourceUrl": "https://github.com/t3dotgg/tstack.git",
+      "skillPath": "skills/takeover/SKILL.md",
+      "sourceType": "github",
+      "computedHash": "eafabb14624dfaa7bf8b1fb30e3f9a026023f82234b6f78443d2dc37930004f6",
+      "group": "t3dotgg",
+      "path": "skills/t3dotgg/takeover"
     },
     "unslop": {
       "source": "cursor/plugins",
