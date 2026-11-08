@@ -1,6 +1,0 @@
-interface:
-  display_name: "Better Writing"
-  short_description: "UX writing, interface copy and microcopy"
-
-policy:
-  allow_implicit_invocation: false
