@@ -30,6 +30,16 @@
       "group": "antfu",
       "path": "skills/antfu/pnpm"
     },
+    "prototype": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/mattpocock/skills.git",
+      "skillPath": "skills/engineering/prototype/SKILL.md",
+      "recordedUpstreamHash": "e41d92e171f074a2b6887d8f6faca4a15c83d1ca",
+      "computedHash": "faba901c53a6ca245174c4ba5db3929d14253232b3050fdbd46539720adf1ab8",
+      "group": "mattpocock",
+      "path": "skills/mattpocock/prototype"
+    },
     "shadcn": {
       "source": "shadcn/ui",
       "sourceType": "github",
